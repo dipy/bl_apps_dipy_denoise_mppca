@@ -1,8 +1,7 @@
 {
-    "command": "dipy_denoise_mppca",
-    "patch_radius":1,
+    "patch_radius": 2,
     "pca_method": "eig",
-    "dwi": "testdata/data.nii.gz",
-    "bvals": "testdata/data.bvals",
-    "bvecs": "testdata/data.bvecs",
+    "dwi": "testdata/dwi.nii.gz",
+    "bvals": "testdata/dwi.bvals",
+    "bvecs": "testdata/dwi.bvecs"
 }
