@@ -1,5 +1,5 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
-[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.454-blue.svg)](https://doi.org/10.25663/brainlife.app.454)
+[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.326-blue.svg)](https://doi.org/10.25663/brainlife.app.326)
 
 # Dipy Denoise Diffusion MRI using MP-PCA
 
@@ -30,17 +30,25 @@ We ask that you the following articles when publishing papers that used data, co
 
 ## Running the App
 
-#### 1. On Brainlife.io
+### On Brainlife.io
 
-You can see a list of [Dipy Apps currently regsitered on Brainlife](https://brainlife.io/apps#dipy). Find the App that you'd like to run and click "Execute" tab to specify dataset that you'd like to run the App on.
+You can see a list of [DIPY Apps currently registered on Brainlife](https://brainlife.io/apps#dipy). Find the App that you'd like to run and click "Execute".
 
-#### 2. On  your machine (Running Locally)
+### Running Locally (on  your machine)
 
 To run this command, you can simply type:
 
-`singularity exec -e docker://brainlife/dipy:1.1.1 dipy_denoise_mppca [your_args]`
+```bash
+singularity exec -e docker://brainlife/dipy:1.1.1 dipy_denoise_mppca [your_args]
+```
 
-To see the documentation of all arguments, [go to the following page](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_denoise_mppca/)
+## Input
+
+To see the documentation of all the arguments, follow this [link](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_denoise_mppca/).
+
+## Output
+
+All output files will be generated according to the passed arguments, as explained [here](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_denoise_mppca/).
 
 ### Dependencies
 

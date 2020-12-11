@@ -1,7 +1,9 @@
 #!/bin/bash
-#PBS -l nodes=1:ppn=8
-#PBS -l vmem=8gb
-#PBS -l walltime=5:00:00
+#PBS -l nodes=1:ppn=12
+#PBS -l vmem=28gb
+#PBS -l walltime=10:00:00
+
+export SINGULARITYENV_OMP_NUM_THREADS=11
 
 set -e
 set -x
@@ -20,4 +22,3 @@ time singularity exec -e docker://brainlife/dipy:1.1.1 dipy_denoise_mppca \
     $(jq -r .dwi config.json)
 
 echo "done"
-
