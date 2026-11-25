@@ -3,6 +3,48 @@
 
 # Dipy Denoise Diffusion MRI using MP-PCA
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Denoises DWI with Marcenko-Pastur PCA (MP-PCA) using the DIPY 1.1.1 dipy_denoise_mppca workflow and outputs the denoised DWI with its bvals and bvecs.**
+
+Wraps DIPY's dipy_denoise_mppca, which removes thermal noise from diffusion-weighted data by local PCA with a Marcenko-Pastur threshold over patches of a given radius. Use it as an early DWI preprocessing step, before motion and distortion correction. The bvals and bvecs are copied unchanged to the output.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/dwi` |
+| 📤 **Outputs** | `neuro/dwi` |
+| 🐳 **Container** | `brainlife/dipy:1.1.1` |
+| ⚙️ **Resources** | 12 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.326](https://doi.org/10.25663/brainlife.app.326) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `dwi` | `neuro/dwi` | yes | 4D diffusion-weighted image with bvals and bvecs. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `neuro/dwi` | MP-PCA denoised DWI (dwi.nii.gz) with the original bvals and bvecs. |
+
+<details>
+<summary><b>⚙️ Parameters</b> (2)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `patch_radius` | number | `2` | The radius of the local patch to be taken around each voxel (in voxels) |
+| `pca_method` | string | `eig` | Use either eigenvalue decomposition ('eig') or singular value decomposition ('svd') for principal component analysis. The default method is 'eig' which is faster. However, occasionally 'svd' might be more accurate. |
+
+</details>
+
+📚 **References used by this App:**
+- Garyfallidis E. et al. Dipy, a library for the analysis of diffusion MRI data. Frontiers in Neuroinformatics 8, 8 (2014).
+- Avesani P. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 The App uses the Marcenko-Pastur Principal Component Analysis (MP-PCA) method to denoise diffusion-weighted magnetic resonance imaging data.
 
 ### Authors
